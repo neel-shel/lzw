@@ -14,12 +14,13 @@ def compress(text):
             string += ch
         else:
             result += string
-            dictionary.append(string + ch)
+            temp = string + ch
+            dictionary.add(temp)
             string = ch
 
     return result
 
 # takes text string and returns decompressed string
-def decompress(text)
+def decompress(text):
     # TODO
     pass

@@ -25,7 +25,7 @@ if __name__ == '__main__':
         
     if option == '-c': #compress
         output_text = compress(input_text)
-    else if option == '-d': #decompress
+    elif option == '-d': #decompress
         output_text = decompress(input_text)
     else:
         print("expected -c|-d")
