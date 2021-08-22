@@ -19,11 +19,11 @@ def compress(text):
     if string:
         result.append(dictionary[string])
 
-    return ','.join([str(i) for i in result])
+    return ''.join([chr(i) for i in result])
 
 # takes text string and returns decompressed string
 def decompress(text):
-    split_text = [int(i) for i in text.split(',')]
+    split_text = [ord(i) for i in list(text)]
 
     result = ''
     dictionary_size = 256
