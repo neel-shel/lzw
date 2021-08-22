@@ -1,7 +1,6 @@
 import sys
 from os import path
-from lzw-compression import compress
-from lzw-decompression import decompress
+from lzw import *
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
@@ -27,7 +26,7 @@ if __name__ == '__main__':
     if option == '-c': #compress
         output_text = compress(input_text)
     else if option == '-d': #decompress
-        pass
+        output_text = decompress(input_text)
     else:
         print("expected -c|-d")
         sys.exit()

@@ -18,3 +18,8 @@ def compress(text):
             string = ch
 
     return result
+
+# takes text string and returns decompressed string
+def decompress(text)
+    # TODO
+    pass
