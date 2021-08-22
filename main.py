@@ -31,8 +31,6 @@ if __name__ == '__main__':
         print("expected -c|-d")
         sys.exit()
 
-    print(output_text)
-
     file = open(output_file, "w")
     file.write(output_text)
     file.close()
