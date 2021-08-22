@@ -1,3 +1,5 @@
+from struct import pack, unpack
+
 # takes text string and return compressed string
 def compress(text):
     split_text = list(text)
@@ -19,11 +21,12 @@ def compress(text):
     if string:
         result.append(dictionary[string])
 
-    return ''.join([chr(i) for i in result])
+    return bytes(pack('!%sI' % len(result), *result))
 
 # takes text string and returns decompressed string
 def decompress(text):
-    split_text = [ord(i) for i in list(text)]
+    num_bytes = len(text) // 4
+    split_text = list(unpack('!%sI' % num_bytes, text))
 
     result = ''
     dictionary_size = 256

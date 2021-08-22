@@ -19,18 +19,26 @@ if __name__ == '__main__':
         print(f"{output_file} already exists!")
         sys.exit()
 
-    file = open(input_file, "r")
-    input_text = file.read()
-    file.close()
-        
     if option == '-c': #compress
+        file = open(input_file, "r")
+        input_text = file.read()
+        file.close()
+
         output_text = compress(input_text)
+
+        file = open(output_file, "wb")
+        file.write(output_text)
+        file.close()
     elif option == '-d': #decompress
+        file = open(input_file, "rb")
+        input_text = file.read()
+        file.close()
+
         output_text = decompress(input_text)
+
+        file = open(output_file, "w")
+        file.write(output_text)
+        file.close()
     else:
         print("expected -c|-d")
         sys.exit()
-
-    file = open(output_file, "w")
-    file.write(output_text)
-    file.close()
