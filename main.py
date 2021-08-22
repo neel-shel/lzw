@@ -1,5 +1,7 @@
 import sys
 from os import path
+from lzw-compression import compress
+from lzw-decompression import decompress
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
